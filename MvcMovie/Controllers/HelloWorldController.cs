@@ -14,9 +14,11 @@ namespace MvcMovie.Controllers
             return  View();
         }
 
-        public string Welcome(string name ,int ID = 3)
+        public ActionResult Welcome(string name ,int ID = 3)
         {
-            return HttpUtility.HtmlEncode("Hello "+name+" Numtimes is "+ID);
+            ViewBag.Message = "Hello " + name;
+            ViewBag.NumTimes = ID;
+            return View();
         }
     }
 }
